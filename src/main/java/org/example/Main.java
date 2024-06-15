@@ -1,3 +1,4 @@
+
 package org.example;
 
 import java.io.*;
@@ -9,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     private static final int ARRAY_SIZE = 1000000;
-    private static final int THREAD_COUNT = 16;
+    private static final int THREAD_COUNT = 6;
     private static final List<Integer> numbers = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -37,6 +38,7 @@ public class Main {
         int sequentialSum = sequentialSum(numbers);
         long endTime = System.nanoTime();
         double elapsedTimeInSeconds = (endTime - startTime) / 1_000_000_000.0;
+        double sequentialTimeInSeconds = (endTime - startTime) / 1_000_000_000.0;
         System.out.println("Suma secuencial: " + sequentialSum);
         System.out.println("Tiempo secuencial: " + elapsedTimeInSeconds + " segundos");
 
@@ -44,9 +46,17 @@ public class Main {
         int parallelSum = parallelSum(numbers, THREAD_COUNT);
         endTime = System.nanoTime();
         elapsedTimeInSeconds = (endTime - startTime) / 1_000_000_000.0;
+        double parallelTimeInSeconds = (endTime - startTime) / 1_000_000_000.0;
         System.out.println("Suma paralela: " + parallelSum);
         System.out.println("Tiempo paralelo con "+ THREAD_COUNT + " hilos: " + elapsedTimeInSeconds + " segundos");
 
+
+        //implementacion con Ley de Amdah
+        double speedup = sequentialTimeInSeconds / parallelTimeInSeconds;
+        double efficiency = speedup / THREAD_COUNT;
+
+        System.out.println("Speedup: " + speedup);
+        System.out.println("Eficiencia: " + efficiency);
         return;
     }
 
