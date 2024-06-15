@@ -28,4 +28,15 @@
 **Suma paralela:** Este metodo recibe la lista numbers y la cantidad de hilos que serán creados. En un bucle se crean los hilos y mediante un lambda se calcula la suma de la porción del arreglo que le tocó a cada hilo. Y finalmente se combinan las sumar parciales en una sola variable para retornar el valor.
 
 **NOTA:** Los tiempos son calculados mediante el metodo conocido en clase, es decir, una variable startTime antes de llamar el respectivo método (secuencial o paralelo), y una variable endTime justo después del llamado del método, y luego se restan para encontrar el tiempo de ejecución.
+# **Salidas basandonos en Hilos**
+![Captura del codigo](https://github.com/Armandogl14/SumArray/blob/main/imgs/salida_1.png)
 
+![Captura del codigo](https://github.com/Armandogl14/SumArray/blob/main/imgs/salida_2.png)
+
+![Captura del codigo](https://github.com/Armandogl14/SumArray/blob/main/imgs/salida_3.png)
+
+![Captura del codigo](https://github.com/Armandogl14/SumArray/blob/main/imgs/salida_4.png)
+
+![Captura del codigo](https://github.com/Armandogl14/SumArray/blob/main/imgs/salida_5.png)
+
+![Captura del codigo](https://github.com/Armandogl14/SumArray/blob/main/imgs/salida_6.png)
